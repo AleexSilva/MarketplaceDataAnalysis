@@ -1,0 +1,82 @@
+Salesforce Opportunities Data Analysis Summary
+==================================================
+
+Total opportunities: 8210
+Columns: 46
+
+Missing values per column:
+reason_other                      7401
+stage_before_closed_lost          5191
+reason_closed_lost                5093
+property_activation               4618
+status_updated_at                 4580
+contract                          4565
+property_type                     4557
+property_created_at               4557
+property_status                   4557
+market_type                       4557
+metro_area_activation             4557
+owner_residing                    4557
+psproperty_id                     4540
+listing_start_date_c              4115
+type                              3683
+renovation_started_date_c         3272
+business_case_c                   3145
+number_potential_properties_c     2064
+lead_score_c                      1609
+selected_property_start_date_c    1130
+lead_created_date                  942
+new_perm_groups                    942
+psa_lead                           942
+rooms                              396
+loi_start_date_c                    93
+opportunity_id                       0
+churned_days                         0
+sum_pipeline_days_buckets            0
+first_stage                          0
+opportunity_created_date             0
+host_opportunity_number              0
+first_prop_or_expansion              0
+metro_area                           0
+opoortunity_owner                    0
+owner_team                           0
+latest_stage                         0
+close_date                           0
+sum_pipeline_days                    0
+loi_days                             0
+selectedproperty_days                0
+renovationstarted_days               0
+listingstarted_days                  0
+closedlost_days                      0
+account_id                           0
+total_sum_days                       0
+created_month                        0
+
+Opportunity stage distribution:
+latest_stage
+Closed Won             0.420585
+Closed Lost            0.367722
+Selected a Property    0.107186
+Renovation Started     0.047138
+Listing Started        0.022168
+LOI                    0.018027
+Churned                0.017174
+
+Opportunity type distribution:
+type
+New Host         0.611442
+Existing Host    0.339518
+PSA              0.036006
+Host-occupied    0.013033
+
+Overall conversion rate: 42.06%
+
+Days in pipeline statistics:
+count    8210.000000
+mean      395.859074
+std       306.419761
+min         0.000000
+25%       136.500000
+50%       331.000000
+75%       601.000000
+max      1215.000000
