@@ -6,7 +6,8 @@ from datetime import datetime
 
 # Image route
 image_route = '../images/'
-data_route = '../data/'
+data_route = '../data/input/'
+data_output_route = '../data/output/'
 
 # Load the data
 df = pd.read_excel(f'{data_route}Salesforce Opportunities export.xlsx', sheet_name='Opportunities Export 2025')
@@ -73,7 +74,7 @@ df['type'].value_counts().plot(kind='pie', autopct='%1.1f%%')
 plt.title('Opportunity Type Distribution')
 plt.ylabel('')
 plt.tight_layout()
-plt.savefig('opportunity_type_distribution.png')
+plt.savefig(f'{image_route}opportunity_type_distribution.png')
 plt.close()
 
 # Visualization 3: Metro area distribution
@@ -84,7 +85,7 @@ plt.xlabel('Metro Area')
 plt.ylabel('Count')
 plt.xticks(rotation=45)
 plt.tight_layout()
-plt.savefig('metro_area_distribution.png')
+plt.savefig(f'{image_route}metro_area_distribution.png')
 plt.close()
 
 # Visualization 4: First property vs expansion
@@ -93,13 +94,8 @@ df['first_prop_or_expansion'].value_counts().plot(kind='pie', autopct='%1.1f%%')
 plt.title('First Property vs Expansion')
 plt.ylabel('')
 plt.tight_layout()
-plt.savefig('first_prop_vs_expansion.png')
+plt.savefig(f'{image_route}first_prop_vs_expansion.png')
 plt.close()
-
-
-df['created_month'] = df['opportunity_created_date'].dt.to_period('M')
-monthly_trend = df.groupby('created_month').size()
-
 
 # Time-based analysis
 if 'opportunity_created_date' in df.columns:
@@ -113,7 +109,7 @@ if 'opportunity_created_date' in df.columns:
     plt.ylabel('Number of Opportunities')
     plt.xticks(rotation=45)
     plt.tight_layout()
-    plt.savefig(r'{image_route}monthly_opportunity_trend.png')
+    plt.savefig(f'{image_route}monthly_opportunity_trend.png')
     plt.close()
 
 # Conversion rates analysis
@@ -130,7 +126,7 @@ if 'total_sum_days' in df.columns:
     plt.xlabel('Total Days in Pipeline')
     plt.ylabel('Count')
     plt.tight_layout()
-    plt.savefig('days_in_pipeline_distribution.png')
+    plt.savefig(f'{image_route}days_in_pipeline_distribution.png')
     plt.close()
 
 # df['rooms'].value_counts()
@@ -143,7 +139,7 @@ if 'rooms' in df.columns:
     plt.xlabel('Number of Rooms')
     plt.ylabel('Count')
     plt.tight_layout()
-    plt.savefig(r'images/rooms_distribution.png')
+    plt.savefig(f'{image_route}rooms_distribution.png')
     plt.close()
 
 # Market type analysis
@@ -155,7 +151,7 @@ if 'market_type' in df.columns:
     plt.ylabel('Count')
     plt.xticks(rotation=45)
     plt.tight_layout()
-    plt.savefig('market_type_distribution.png')
+    plt.savefig(f'{image_route}market_type_distribution.png')
     plt.close()
 
 # Property type analysis
@@ -167,11 +163,11 @@ if 'property_type' in df.columns:
     plt.ylabel('Count')
     plt.xticks(rotation=45)
     plt.tight_layout()
-    plt.savefig('property_type_distribution.png')
+    plt.savefig(f'{image_route}property_type_distribution.png')
     plt.close()
 
 # Save summary statistics to a file
-with open('data_summary.txt', 'w') as f:
+with open(f'{data_output_route}data_summary.txt', 'w') as f:
     f.write("Salesforce Opportunities Data Analysis Summary\n")
     f.write("="*50 + "\n\n")
     
