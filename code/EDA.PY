@@ -5,11 +5,11 @@ import seaborn as sns
 from datetime import datetime
 
 # Image route
-
-
+image_route = '../images/'
+data_route = '../data/'
 
 # Load the data
-df = pd.read_excel('Salesforce Opportunities export.xlsx', sheet_name='Opportunities Export 2025')
+df = pd.read_excel(f'{data_route}Salesforce Opportunities export.xlsx', sheet_name='Opportunities Export 2025')
 
 # Basic data exploration
 print("Dataset shape:", df.shape)
@@ -64,7 +64,7 @@ plt.xlabel('Stage')
 plt.ylabel('Count')
 plt.xticks(rotation=45)
 plt.tight_layout()
-plt.savefig('opportunity_stage_distribution.png')
+plt.savefig(f'{image_route}opportunity_stage_distribution.png')
 plt.close()
 
 # Visualization 2: Opportunity type distribution
@@ -113,7 +113,7 @@ if 'opportunity_created_date' in df.columns:
     plt.ylabel('Number of Opportunities')
     plt.xticks(rotation=45)
     plt.tight_layout()
-    plt.savefig('monthly_opportunity_trend.png')
+    plt.savefig(r'{image_route}monthly_opportunity_trend.png')
     plt.close()
 
 # Conversion rates analysis
